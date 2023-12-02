@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/43dcc20e7a.js" crossorigin="anonymous"></script>
+    <title>African Recipes</title>
+
+
+    <meta name="description" content="African food Recipes at your fingertip">
+    <meta name="keywords" content="african recipe, food recipe, african food, culture">
+    <link rel="shortcut icon" href="https://www.royacshop.com/wp-content/uploads/2018/09/EFO-RIRO-711x400.jpg" type="image/x-icon">
+
+
+    <meta name="description" content="African Food Recipe">
+    <meta name="keywords" content="african recipe, food recipe, african food, culture, ghana recipe, kenya recipe" />
+
+
+   <!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://africandishes.org/">
+<meta property="og:title" content="African Food Recipe">
+<meta property="og:description" content="Explore african food recipe, ghana recipe, nigerian recipe, kenyan recipe" />
+<meta property="og:image" content="https://www.royacshop.com/wp-content/uploads/2018/09/EFO-RIRO-711x400.jpg"> 
+<meta name="keywords" content="african recipe, food recipe, african food, culture, ghana recipe, kenya recipe" />
+
+   <!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="http://africandishes.org/">
+<meta property="og:title" content="African Food Recipe">
+<meta property="og:description" content="Explore african food recipe, ghana recipe, nigerian recipe, kenyan recipe" />
+<meta property="og:image" content="https://www.royacshop.com/wp-content/uploads/2018/09/EFO-RIRO-711x400.jpg"> 
+<meta name="keywords" content="african recipe, food recipe, african food, culture, ghana recipe, kenya recipe" />
+
+</head>
+<body>
+    <div class='top'></div>
+    <div class="svg-container">
+        <svg viewBox="0 0 800 400" class="svg">
+            <path id="curve" fill="#FAA06D" d="M 800 300 Q 400 350 0 300 L 0 0 L 800 0 L 800 300 Z"></path>
+        </svg>
+    </div>
+    <nav>
+        <img src="africandishes.org/logo.png" alt="">
+        <div class="header-title">
+            <h1>Africandishes.org</h1>
+            <p>Explore all African dish recipes</p>
+        </div>
+        <div class="container">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Search for recipe..." id="searchInput">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <main>
+        <div class="menu-button">
+            <img class="flags"src="https://th.bing.com/th/id/OIP.gn0xjap7AEObVkm0CQbWFAHaE8?rs=1&pid=ImgDetMain" alt="Ghana Flag">
+            <a href="ghana.html"></a><button>Ghana Recipes</button></a>
+        </div>
+
+        <div class="menu-button">
+            <img class="flags"src="https://www.countryaah.com/wp-content/uploads/2020/08/Flag-of-Kenya.jpg" alt="Kenya Flag">
+            <a href="index.html"><button>Nigeria Recipes</button></a>
+        </div>
+
+    </main>
+    </nav>
+
+    <div class="recipe-container">
+        <section class="featured-recipes">
+
+            <div class="recipe-card" data-name="chapati">
+                <img src="https://i.pinimg.com/originals/e3/e8/b4/e3e8b424f6b99be1b1c3bb7eebba2074.jpg" alt="Spaghetti">
+                <h3>Chapati</h3>
+                <a href="chapati.html">View Recipe</a>
+            </div>
+
+            <div class="recipe-card" data-name="mahamri">
+                <img src="https://th.bing.com/th/id/R.313c1e0ff2202e5cc389cc3da13dc9d6?rik=Ga4o9U9%2f9JOWAg&pid=ImgRaw&r=0" alt="Spaghetti">
+                <h3>Mahamri</h3>
+                <a href="mahamri.html">View Recipe</a>
+            </div>
+
+        
+
+        </section>
+    </div>
+
+    <br><br> 
+
+  
+   
+    <script>
+ document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('searchInput');
+    const originalRecipeContainer = document.querySelector('.featured-recipes');
+    const recipeContainer = document.querySelector('.recipe-container');
+
+    // Listen for both 'input' and 'change' events on the search input
+    searchInput.addEventListener('input', handleSearch);
+    searchInput.addEventListener('change', handleSearch);
+
+    function handleSearch() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+
+        // Get all recipe cards
+        const recipeCards = originalRecipeContainer.querySelectorAll('.recipe-card');
+
+        // Create a fragment to hold the matching cards
+        const fragment = document.createDocumentFragment();
+
+        recipeCards.forEach(recipeCard => {
+            const recipeName = recipeCard.dataset.name.toLowerCase();
+
+            // Check if the search term is empty or if the recipe name includes the search term
+            if (searchTerm === '' || recipeName.includes(searchTerm)) {
+                fragment.appendChild(recipeCard.cloneNode(true));
+            }
+        });
+
+        // Clear the current content in the recipe container
+        recipeContainer.innerHTML = '';
+
+        // Append the matching cards to the recipe container
+        recipeContainer.appendChild(fragment);
+
+        // Check if the input is empty and trigger a page refresh
+        if (searchTerm === '') {
+            location.reload();
+        }
+    }
+});
+
+    (function() {
+    // Variables
+    var $curve = document.getElementById("curve");
+    var last_known_scroll_position = 0;
+    var defaultCurveValue = 350;
+    var curveRate = 3;
+    var ticking = false;
+    var curveValue;
+  
+    // Handle the functionality
+    function scrollEvent(scrollPos) {
+      if (scrollPos >= 0 && scrollPos < defaultCurveValue) {
+        curveValue = defaultCurveValue - parseFloat(scrollPos / curveRate);
+        $curve.setAttribute(
+          "d",
+          "M 800 300 Q 400 " + curveValue + " 0 300 L 0 0 L 800 0 L 800 300 Z"
+        );
+      }
+    }
+  
+    window.addEventListener("scroll", function(e) {
+      last_known_scroll_position = window.scrollY;
+  
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          scrollEvent(last_known_scroll_position);
+          ticking = false;
+        });
+      }
+  
+      ticking = true;
+    });
+  })();
+
+</script>
+</body>
+</html>
+
+
+
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200&display=swap');
+    body {
+        font-family: 'Exo 2', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    *, *:after, *:before {
+  margin: 0;
+  padding: 0;
+}
+
+
+main {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center;
+}
+
+.menu-button {
+    display: flex;
+    flex-direction: row; /* Set to row */
+    align-items: center;
+}
+
+button {
+    margin: 0 5px; /* Adjust the margin to reduce spacing */
+    background-color: #e79b45;
+    color: white;
+    border: pink;
+    padding: 5px 10px; /* Adjust padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.flags {
+    width: 20px; 
+    height: auto;
+    border-radius: 5%;
+    margin-right: 5px; /* Add margin to the right of the flag */
+}
+.svg-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}
+
+svg {
+  path {
+    transition: .1s;
+  }
+
+  &:hover path {
+    d: path("M 800 300 Q 400 250 0 300 L 0 0 L 800 0 L 800 300 Z");
+  }
+}
+
+.top {
+	position: relative;
+	height: 10px;
+	background: linear-gradient(141deg, cyan 0%, rebeccapurple 40%, deeppink 90%);
+}
+
+.container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .search-box {
+            background-color: #fff;
+            border-radius: 20px; /* Rounded corners */
+            padding: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft box shadow */
+            display: flex;
+            align-items: center;
+        }
+
+        .search-input {
+            border: none;
+            outline: none;
+            width: 80%;
+            padding: 10px;
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        .search-button {
+            background-color: #FAA06D; /* Soft pink button color */
+            border: none;
+            padding: 10px;
+            margin-left: 10px;
+            border-radius: 10px; /* Rounded corners */
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        .search-button:hover {
+            background-color: #ad6c46; /* Darker pink on hover */
+        }
+
+        /* Animation Effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .search-box, .search-input, .search-button {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1em;
+    }
+
+    .header-title h1, .header-title p{
+        color: rgb(255, 254, 254) !important;
+    }
+
+    nav {
+   
+        text-align: center;
+        padding: 10px;
+       
+    }
+
+  
+    section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .featured-recipes, .latest-recipes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+
+    .recipe-card {
+    position: relative;
+    width: 300px;
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.recipe-card {
+    position: relative;
+    width: 300px;
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: bounce 1s infinite; /* Bouncing animation */
+}
+
+.recipe-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: none; /* Stop bouncing on hover */
+}
+
+.recipe-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.recipe-card h3, .recipe-card p {
+    margin: 10px;
+}
+
+.recipe-card a {
+    display: block;
+    background-color: #FAA06D;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 0 0 10px 10px;
+}
+
+.recipe-card a:hover {
+    background-color: #b6744d;
+}
+
+
+    .recipe-card {
+        width: 300px;
+        margin: 20px;
+        padding: 15px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .recipe-card:hover {
+        transform: scale(1.05);
+    }
+
+    .recipe-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1em;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+h1{
+    color: black;
+
+}
+
+h2{
+    color: black;
+}
+
+    img{
+        width: 15%;
+            height: 10%;
+    }
+
+
+    footer {
+  text-align: center;
+  padding: 3px;
+  background-color: DarkSalmon;
+  color: white;
+}
+
+
+</style>
