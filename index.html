@@ -37,7 +37,7 @@
     <div class='top'></div>
     <div class="svg-container">
         <svg viewBox="0 0 800 400" class="svg">
-            <path id="curve" fill="#4C1C00" d="M 800 300 Q 400 350 0 300 L 0 0 L 800 0 L 800 300 Z"></path>
+            <path id="curve" height="55px"fill="#4C1C00" d="M 800 300 Q 400 350 0 300 L 0 0 L 800 0 L 800 300 Z"></path>
         </svg>
     </div>
     <nav>
@@ -72,10 +72,12 @@
         <div class="text-header">
         <h1>Africandishes.org</h1>
         </div>
-        <img src="logo.png" alt="">
+        <img padding="4px"src="logo.png" alt="">
+        <!--
         <div class="header-title">
             <p>Explore all African dish recipes</p>
         </div>
+        -->
         <div class="container">
             <div class="search-box">
                 <input type="text" class="search-input" placeholder="Search for recipe..." id="searchInput">
@@ -86,7 +88,7 @@
         </div>
         <main>
             <div class="menu-button">
-                <a href="https://africandishes.org/ghana/index.html"><button>Ghana Recipes</button></a>
+                <a href="./ghana/index.html"><button>Ghana Recipes</button></a>
             </div>
     
         <div class="menu-button">
@@ -94,18 +96,19 @@
         </div>
 
         <div class="menu-button">
-            <a href="kenya/index.html"> <button>Kenya Recipes</button></a>
+            <a href="./kenya/index.html"> <button>Kenya Recipes</button></a>
         </div>
         <br>
         <div class="menu-button">
-            <a href="southafrica/index.html"> <button>South Africa Recipes</button></a>
+            <a href="./southafrica/index.html"> <button>South Africa Recipes</button></a>
         </div>
    
        
     </main>
+    <!--
  
         <a href="countries.html" class="explore_a"><br>Explore other countries</a>
-    
+    -->
     
     </nav>
 
@@ -583,6 +586,15 @@ button {
   right: 0;
   left: 0;
   z-index: -1;
+  height: 400px; /* Adjust the height to your preference */
+}
+
+.svg-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
 }
 
 svg {
@@ -591,7 +603,7 @@ svg {
   }
 
   &:hover path {
-    d: path("M 800 300 Q 400 250 0 300 L 0 0 L 800 0 L 800 300 Z");
+    d: path("M 800 300 Q 400 900 0 300 L 0 0 L 800 0 L 800 300 Z"); /* Adjust the control points to modify the curve */
   }
 }
 
@@ -605,7 +617,7 @@ svg {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px;
+            padding: 5px;
         }
 
         .search-box {
@@ -808,6 +820,7 @@ footer {
     width: 90%;
     margin: 0 auto; /* Center the element horizontally */
     text-align: center;
+
 }
 
 h1 {
@@ -819,12 +832,14 @@ h1 {
 
 @media screen and (max-width: 768px) {
     h1 {
-        font-size: 40px; /* Adjust the font size for smaller screens */
+        font-size: 20px; 
+        margin-top: 2px;/* Adjust the font size for smaller screens */
     }
 
     .text-header {
         width: 100%; /* Make the text header full width on smaller screens */
-        margin: 0; /* Remove the margin to utilize the full width */
+        margin: 0; 
+        font-size: 10px;/* Remove the margin to utilize the full width */
     }
 }
 
@@ -874,7 +889,7 @@ h2{
             background: none;
             border: none;
             cursor: pointer;
-            padding: 10px;
+            padding: 4px;
             display: flex;
             flex-direction: column;
         }

@@ -4,23 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/43dcc20e7a.js" crossorigin="anonymous"></script>
-    <title>Ghana Recipes</title>
+    <title>African Recipes</title>
+
+
+    <meta name="description" content="African food Recipes at your fingertip">
+    <meta name="keywords" content="african recipe, food recipe, african food, culture">
+    <link rel="shortcut icon" href="https://www.royacshop.com/wp-content/uploads/2018/09/EFO-RIRO-711x400.jpg" type="image/x-icon">
+
+
+    <meta name="description" content="African Food Recipes">
+    <meta name="keywords" content="african recipe, food recipe, african food, culture, ghana recipe, kenya recipe" />
+
+
+   <!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://africandishes.org/">
+<meta property="og:title" content="African Food Recipes">
+<meta property="og:description" content="Discover diverse African culinary delights, including Ghanaian, Nigerian, and Kenyan recipes. Explore the rich and vibrant flavors of African cuisine." />
+<meta property="og:image" content="https://www.royacshop.com/wp-content/uploads/2018/09/EFO-RIRO-711x400.jpg"> 
+<meta name="keywords" content="african recipe, food recipe, african food, culture, ghana recipe, kenya recipe" />
+
+   <!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="http://africandishes.org/">
+<meta property="og:title" content="African Food Recipe">
+<meta property="og:description"  content="Discover diverse African culinary delights, including Ghanaian, Nigerian, and Kenyan recipes. Explore the rich and vibrant flavors of African cuisine."  />
+<meta property="og:image" content="https://www.royacshop.com/wp-content/uploads/2018/09/EFO-RIRO-711x400.jpg"> 
+<meta name="keywords" content="african recipe, food recipe, african food, culture, ghana recipe, kenya recipe" />
+
 </head>
 <body>
     <div class='top'></div>
     <div class="svg-container">
         <svg viewBox="0 0 800 400" class="svg">
-            <path id="curve" fill="#4C1C00" d="M 800 300 Q 400 350 0 300 L 0 0 L 800 0 L 800 300 Z"></path>
+            <path id="curve" height="55px"fill="#4C1C00" d="M 800 300 Q 400 350 0 300 L 0 0 L 800 0 L 800 300 Z"></path>
         </svg>
     </div>
     <nav>
+        <header class="header_section">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container">
+                  
+                    <div class="custom_menu-btn">
+                        <button onclick="openNav()">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <div id="myNav" class="overlay">
+                            <div class="overlay-content">
+                                <a href="javascript:void(0);" onclick="closeNav()">
+                                    <i class="fas fa-times"></i> 
+                                </a>
+                                <a href="./index.html" onclick="closeNav()">
+                                    Home
+                                </a>
+                                <a href="https://globaldailygist.com/category/food/" onclick="closeNav()">
+                                    Blog
+                                </a>
+                                <a href="./disclaimer.html" onclick="closeNav()">
+                                    Disclaimer
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
         <div class="text-header">
         <h1>Africandishes.org</h1>
         </div>
-        <img src="https://africandishes.org/logo.png" alt="">
+        <img padding="4px"src="../logo.png" alt="">
+        <!--
         <div class="header-title">
             <p>Explore all African dish recipes</p>
         </div>
+        -->
         <div class="container">
             <div class="search-box">
                 <input type="text" class="search-input" placeholder="Search for recipe..." id="searchInput">
@@ -33,16 +90,26 @@
             <div class="menu-button">
                 <a href="https://africandishes.org/ghana/index.html"><button>Ghana Recipes</button></a>
             </div>
-
+    
         <div class="menu-button">
             <a href="../index.html"><button>Nigeria Recipes</button></a>
         </div>
 
         <div class="menu-button">
-            <a href="kenya/index.html"> <button>Kenya Recipes</button></a>
+            <a href="../kenya/index.html"> <button>Kenya Recipes</button></a>
         </div>
-
+        <br>
+        <div class="menu-button">
+            <a href="../southafrica/index.html"> <button>South Africa Recipes</button></a>
+        </div>
+   
+       
     </main>
+    <!--
+ 
+        <a href="countries.html" class="explore_a"><br>Explore other countries</a>
+    -->
+    
     </nav>
 
     <div class="recipe-container">
@@ -164,399 +231,496 @@
     </footer>
        
   
-   
     <script>
- document.addEventListener('DOMContentLoaded', function () {
-    const searchInput = document.getElementById('searchInput');
-    const originalRecipeContainer = document.querySelector('.featured-recipes');
-    const recipeContainer = document.querySelector('.recipe-container');
 
-    // Listen for both 'input' and 'change' events on the search input
-    searchInput.addEventListener('input', handleSearch);
-    searchInput.addEventListener('change', handleSearch);
-
-    function handleSearch() {
-        const searchTerm = searchInput.value.trim().toLowerCase();
-
-        // Get all recipe cards
-        const recipeCards = originalRecipeContainer.querySelectorAll('.recipe-card');
-
-        // Create a fragment to hold the matching cards
-        const fragment = document.createDocumentFragment();
-
-        recipeCards.forEach(recipeCard => {
-            const recipeName = recipeCard.dataset.name.toLowerCase();
-
-            // Check if the search term is empty or if the recipe name includes the search term
-            if (searchTerm === '' || recipeName.includes(searchTerm)) {
-                fragment.appendChild(recipeCard.cloneNode(true));
+        function openNav() {
+                document.getElementById("myNav").style.width = "100%";
+            }
+        
+            function closeNav() {
+                document.getElementById("myNav").style.width = "0%";
+            }
+         document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('searchInput');
+            const originalRecipeContainer = document.querySelector('.featured-recipes');
+            const recipeContainer = document.querySelector('.recipe-container');
+        
+            // Listen for both 'input' and 'change' events on the search input
+            searchInput.addEventListener('input', handleSearch);
+            searchInput.addEventListener('change', handleSearch);
+        
+            function handleSearch() {
+                const searchTerm = searchInput.value.trim().toLowerCase();
+        
+                // Get all recipe cards
+                const recipeCards = originalRecipeContainer.querySelectorAll('.recipe-card');
+        
+                // Create a fragment to hold the matching cards
+                const fragment = document.createDocumentFragment();
+        
+                recipeCards.forEach(recipeCard => {
+                    const recipeName = recipeCard.dataset.name.toLowerCase();
+        
+                    // Check if the search term is empty or if the recipe name includes the search term
+                    if (searchTerm === '' || recipeName.includes(searchTerm)) {
+                        fragment.appendChild(recipeCard.cloneNode(true));
+                    }
+                });
+        
+                // Clear the current content in the recipe container
+                recipeContainer.innerHTML = '';
+        
+                // Append the matching cards to the recipe container
+                recipeContainer.appendChild(fragment);
+        
+                // Check if the input is empty and trigger a page refresh
+                if (searchTerm === '') {
+                    location.reload();
+                }
             }
         });
-
-        // Clear the current content in the recipe container
-        recipeContainer.innerHTML = '';
-
-        // Append the matching cards to the recipe container
-        recipeContainer.appendChild(fragment);
-
-        // Check if the input is empty and trigger a page refresh
-        if (searchTerm === '') {
-            location.reload();
+        
+            (function() {
+            // Variables
+            var $curve = document.getElementById("curve");
+            var last_known_scroll_position = 0;
+            var defaultCurveValue = 350;
+            var curveRate = 3;
+            var ticking = false;
+            var curveValue;
+          
+            // Handle the functionality
+            function scrollEvent(scrollPos) {
+              if (scrollPos >= 0 && scrollPos < defaultCurveValue) {
+                curveValue = defaultCurveValue - parseFloat(scrollPos / curveRate);
+                $curve.setAttribute(
+                  "d",
+                  "M 800 300 Q 400 " + curveValue + " 0 300 L 0 0 L 800 0 L 800 300 Z"
+                );
+              }
+            }
+          
+            window.addEventListener("scroll", function(e) {
+              last_known_scroll_position = window.scrollY;
+          
+              if (!ticking) {
+                window.requestAnimationFrame(function() {
+                  scrollEvent(last_known_scroll_position);
+                  ticking = false;
+                });
+              }
+          
+              ticking = true;
+            });
+          })();
+        
+        </script>
+        </body>
+        </html>
+        
+        
+        
+        
+        
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200&display=swap');
+            body {
+                font-family: 'Exo 2', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+            }
+        
+            *, *:after, *:before {
+          margin: 0;
+          padding: 0;
         }
-    }
-});
-
-    (function() {
-    // Variables
-    var $curve = document.getElementById("curve");
-    var last_known_scroll_position = 0;
-    var defaultCurveValue = 350;
-    var curveRate = 3;
-    var ticking = false;
-    var curveValue;
-  
-    // Handle the functionality
-    function scrollEvent(scrollPos) {
-      if (scrollPos >= 0 && scrollPos < defaultCurveValue) {
-        curveValue = defaultCurveValue - parseFloat(scrollPos / curveRate);
-        $curve.setAttribute(
-          "d",
-          "M 800 300 Q 400 " + curveValue + " 0 300 L 0 0 L 800 0 L 800 300 Z"
-        );
-      }
-    }
-  
-    window.addEventListener("scroll", function(e) {
-      last_known_scroll_position = window.scrollY;
-  
-      if (!ticking) {
-        window.requestAnimationFrame(function() {
-          scrollEvent(last_known_scroll_position);
-          ticking = false;
-        });
-      }
-  
-      ticking = true;
-    });
-  })();
-
-</script>
-</body>
-</html>
-
-
-
-
-
-<style>
-   @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200&display=swap');
-    body {
-        font-family: 'Exo 2', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-    }
-
-    *, *:after, *:before {
-  margin: 0;
-  padding: 0;
-}
-
-
-main {
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center;
-}
-
-.menu-button {
-    display: flex;
-    flex-direction: row; /* Set to row */
-    align-items: center;
-}
-
-button {
-    margin: 0 5px; /* Adjust the margin to reduce spacing */
-    background-color: #e79b45;
-    color: white;
-    border: pink;
-    padding: 5px 10px; /* Adjust padding */
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.flags {
-    width: 20px; 
-    height: auto;
-    border-radius: 5%;
-    margin-right: 5px; /* Add margin to the right of the flag */
-}
-.svg-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: -1;
-}
-
-svg {
-  path {
-    transition: .1s;
-  }
-
-  &:hover path {
-    d: path("M 800 300 Q 400 250 0 300 L 0 0 L 800 0 L 800 300 Z");
-  }
-}
-
-.top {
-	position: relative;
-	height: 10px;
-	background: linear-gradient(141deg, cyan 0%, rebeccapurple 40%, deeppink 90%);
-}
-
-.container {
+        
+        
+        main {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-        }
-
-        .search-box {
-            background-color: #fff;
-            border-radius: 20px; /* Rounded corners */
-            padding: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft box shadow */
-            display: flex;
+            justify-content: center; /* Center the content horizontally */
             align-items: center;
         }
-
-        .search-input {
-            border: none;
-            outline: none;
-            width: 80%;
-            padding: 10px;
-            border-radius: 10px; /* Rounded corners */
+        
+        .menu-button {
+            display: flex;
+            flex-direction: row; /* Set to row */
+            align-items: center;
         }
-
-        .search-button {
-            background-color: #FAA06D; /* Soft pink button color */
-            border: none;
-            padding: 10px;
-            margin-left: 10px;
-            border-radius: 10px; /* Rounded corners */
+        
+        button {
+            margin: 0 5px; /* Adjust the margin to reduce spacing */
+            background-color: #e79b45;
+            color: white;
+            border: pink;
+            padding: 5px 10px; /* Adjust padding */
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
             cursor: pointer;
-            transition: background-color 0.3s ease; /* Smooth transition */
+            border-radius: 5px;
         }
-
-        .search-button:hover {
-            background-color: #ad6c46; /* Darker pink on hover */
+        
+        .flags {
+            width: 20px; 
+            height: auto;
+            border-radius: 5%;
+            margin-right: 5px; /* Add margin to the right of the flag */
         }
-
-        /* Animation Effect */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
+        .svg-container {
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          z-index: -1;
+          height: 400px; /* Adjust the height to your preference */
+        }
+        
+        .svg-container {
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          z-index: -1;
+        }
+        
+        svg {
+          path {
+            transition: .1s;
+          }
+        
+          &:hover path {
+            d: path("M 800 300 Q 400 900 0 300 L 0 0 L 800 0 L 800 300 Z"); /* Adjust the control points to modify the curve */
+          }
+        }
+        
+        .top {
+            position: relative;
+            height: 10px;
+            background: linear-gradient(141deg, cyan 0%, rebeccapurple 40%, deeppink 90%);
+        }
+        
+        .container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 5px;
+                }
+        
+                .search-box {
+                    background-color: #fff;
+                    border-radius: 20px; /* Rounded corners */
+                    padding: 5px;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft box shadow */
+                    display: flex;
+                    align-items: center;
+                }
+        
+                .search-input {
+                    border: none;
+                    outline: none;
+                    width: 80%;
+                    padding: 10px;
+                    border-radius: 10px; /* Rounded corners */
+                }
+        
+                .search-button {
+                    background-color: #FAA06D; /* Soft pink button color */
+                    border: none;
+                    padding: 10px;
+                    margin-left: 10px;
+                    border-radius: 10px; /* Rounded corners */
+                    cursor: pointer;
+                    transition: background-color 0.3s ease; /* Smooth transition */
+                }
+        
+                .search-button:hover {
+                    background-color: #ad6c46; /* Darker pink on hover */
+                }
+        
+                /* Animation Effect */
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                    }
+                    to {
+                        opacity: 1;
+                    }
+                }
+        
+                .search-box, .search-input, .search-button {
+                    animation: fadeIn 1s ease-in-out;
+                }
+        
+            header {
+        
+                color: #fff;
+                text-align: center;
+                padding: 1em;
             }
-            to {
-                opacity: 1;
+        
+            .header-title h1, .header-title p{
+                color: rgb(255, 254, 254) !important;
+            }
+        
+            nav {
+           
+                text-align: center;
+                padding: 10px;
+               
+            }
+        
+          
+            section {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+        
+            .featured-recipes, .latest-recipes {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+        
+        
+            .recipe-card {
+            position: relative;
+            width: 300px;
+            margin: 20px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
             }
         }
-
-        .search-box, .search-input, .search-button {
-            animation: fadeIn 1s ease-in-out;
+        
+        .recipe-card {
+            position: relative;
+            width: 300px;
+            margin: 20px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            animation: bounce 1s infinite; /* Bouncing animation */
         }
-
-    header {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 1em;
-    }
-
-    .header-title h1, .header-title p{
-        color: rgb(255, 254, 254) !important;
-    }
-
-    nav {
-   
-        text-align: center;
-        padding: 10px;
-       
-    }
-
-  
-    section {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-
-    .featured-recipes, .latest-recipes {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-
-    .recipe-card {
-    position: relative;
-    width: 300px;
-    margin: 20px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-20px);
-    }
-    60% {
-        transform: translateY(-10px);
-    }
-}
-
-.recipe-card {
-    position: relative;
-    width: 300px;
-    margin: 20px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    animation: bounce 1s infinite; /* Bouncing animation */
-}
-
-.recipe-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    animation: none; /* Stop bouncing on hover */
-}
-
-.recipe-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px 10px 0 0;
-}
-
-.recipe-card h3, .recipe-card p {
-    margin: 10px;
-}
-
-.recipe-card a {
-    display: block;
-    background-color: #FAA06D;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-    border-radius: 0 0 10px 10px;
-}
-
-.recipe-card a:hover {
-    background-color: #b6744d;
-}
-
-
-    .recipe-card {
-        width: 300px;
-        margin: 20px;
-        padding: 15px;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .recipe-card:hover {
-        transform: scale(1.05);
-    }
-
-    .recipe-card img {
-        width: 100%;
-        height: auto;
-        border-radius: 4px;
-        margin-bottom: 10px;
-    }
-
-    .container-2 {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px;
-    text-align: center;
-    background-color: #4C1C00; /* Background color */
-    color: #fff; /* Text color */
-}
-
-footer {
-    color: #fff;
-}
-
-.social-icons img {
-    width: 30px;
-    height: 30px;
-    margin: 0 5px;
-}
-
-.disclaimer {
-    color: #fff; /* Text color for the disclaimer link */
-    text-decoration: none;
-    margin-top: 10px;
-    display: block; /* Ensures proper spacing */
-}
-
-.disclaimer:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
-.disclaimer {
-    font-size: 12px;
-    margin-top: 10px;
-}
-    .text-header {
-    width: 90%;
-    margin: 0 auto; /* Center the element horizontally */
-    text-align: center;
-}
-
-h1 {
-    color: rgb(255, 123, 0);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 60px;
-    text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 40px; /* Adjust the font size for smaller screens */
-    }
-
-    .text-header {
-        width: 100%; /* Make the text header full width on smaller screens */
-        margin: 0; /* Remove the margin to utilize the full width */
-    }
-}
-
-
-
-h2{
-    color: black;
-}
-
-    img{
-        width: 15%;
-            height: 10%;
-    }
-
-
-    
-
-</style>
+        
+        .recipe-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            animation: none; /* Stop bouncing on hover */
+        }
+        
+        .recipe-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .recipe-card h3, .recipe-card p {
+            margin: 10px;
+        }
+        
+        .recipe-card a {
+            display: block;
+            background-color: #FAA06D;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .recipe-card a:hover {
+            background-color: #b6744d;
+        }
+        
+        
+            .recipe-card {
+                width: 300px;
+                margin: 20px;
+                padding: 15px;
+                background-color: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                transition: transform 0.3s ease-in-out;
+            }
+        
+            .recipe-card:hover {
+                transform: scale(1.05);
+            }
+        
+            .recipe-card img {
+                width: 100%;
+                height: auto;
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+            .container-2 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            text-align: center;
+            background-color: #4C1C00; /* Background color */
+            color: #fff; /* Text color */
+        }
+        
+        footer {
+            color: #fff;
+        }
+        
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+        }
+        
+        .disclaimer {
+            color: #fff; /* Text color for the disclaimer link */
+            text-decoration: none;
+            margin-top: 10px;
+            display: block; /* Ensures proper spacing */
+        }
+        
+        .disclaimer:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+        
+        .disclaimer {
+            font-size: 12px;
+            margin-top: 10px;
+        }
+        
+            .text-header {
+            width: 90%;
+            margin: 0 auto; /* Center the element horizontally */
+            text-align: center;
+        
+        }
+        
+        h1 {
+            color: rgb(255, 123, 0);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 60px;
+            text-align: center;
+        }
+        
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 20px; 
+                margin-top: 2px;/* Adjust the font size for smaller screens */
+            }
+        
+            .text-header {
+                width: 100%; /* Make the text header full width on smaller screens */
+                margin: 0; 
+                font-size: 10px;/* Remove the margin to utilize the full width */
+            }
+        }
+        
+        
+        
+        h2{
+            color: black;
+        }
+        
+            img{
+                width: 15%;
+                    height: 10%;
+            }
+        
+            .explore_a{
+            color: orange;
+            font-weight: 500;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        
+        
+        
+        .header_section {
+                    color:#4C1C00;
+                    padding: 10px 0;
+                }
+        
+                .container-fluid {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+        
+                .navbar {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color:transparent !important;
+                }
+        
+                .navbar-brand img {
+                    height: 50px;
+                    width: 50px;
+                }
+        
+                .custom_menu-btn button {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    padding: 4px;
+                    display: flex;
+                    flex-direction: column;
+                }
+        
+                .overlay {
+                    height: 100%;
+                    width: 0;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    background-color:#4C1C00;
+                    overflow-x: hidden;
+                    transition: 0.5s;
+                    z-index: 999;
+                }
+        
+                .overlay-content {
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    width: 100%;
+                    text-align: center;
+                }
+        
+                .overlay-content a {
+                    padding: 15px;
+                    font-size: 20px;
+                    display: block;
+                    color: orange;
+                    transition: 0.3s;
+                }
+        
+                .overlay-content a:hover, .overlay-content a:focus {
+                    color: #f1f1f1;
+                }
+        
+                
+                .custom_menu-btn button i {
+                    font-size: 24px;
+                    color:orange;
+                }
+        
+                .overlay-content a i {
+                    margin-right: 10px;
+                }
+        </style>
